@@ -34,6 +34,17 @@ The dataset used for this project contains information on company layoffs, inclu
 
 ---
 
+## 3️⃣ Full Code and Queries
+The complete SQL queries for **Data Cleaning** and **Exploratory Data Analysis (EDA)** can be found here:  
+
+📌 **Data Cleaning SQL Script:**  
+🔗 [SQL_tutorial_&_project/Project_porfolio_from_Alex_Analyst.sql](https://github.com/harlesky/Sql_Tutorial_-_Project/blob/main/SQL_tutorial_%26_project/Project_porfolio_from_Alex_Analyst.sql)  
+
+📌 **Exploratory Data Analysis (EDA) SQL Script:**  
+🔗 [SQL_tutorial_&_project/Project2_Exploratory_Data_analysis.sql](https://github.com/harlesky/Sql_Tutorial_-_Project/blob/main/SQL_tutorial_%26_project/Project2_Exploratory_Data_analysis.sql)  
+
+---
+
 ## 3️⃣ Data Cleaning Steps
 Before analyzing the data, we perform **data cleaning** to ensure accuracy. The following steps are taken:
 
@@ -82,5 +93,49 @@ FROM world_layoffs.layoffs_staging2
 WHERE total_laid_off IS NULL
 AND percentage_laid_off IS NULL;
 ```
+
+# Project2: Exploratory Data Analysis (EDA) on Layoffs Data
+
+## Overview
+This section analyzes layoffs data to uncover trends in workforce reductions across various industries and companies. The analysis includes identifying maximum layoffs, layoff percentages, and insights into funding vs. layoffs.
+
+---
+
+## 1️⃣ Viewing Cleaned Data
+Before analysis, we confirm that the data is properly cleaned and structured.
+
+```sql
+SELECT *
+FROM layoffs_staging2;
+```
+## So here we look at the percentage of layoffs, companies with 100 percent layoffs and others
+```sql
+SELECT MAX(percentage_laid_off),  MIN(percentage_laid_off)
+FROM world_layoffs.layoffs_staging2
+WHERE  percentage_laid_off IS NOT NULL;
+
+---
+SELECT *
+FROM world_layoffs.layoffs_staging2
+WHERE  percentage_laid_off = 1;
+```
+
+## 🔍 Conclusion
+
+This analysis of layoffs data reveals key workforce reduction trends across various industries. The findings indicate that:
+
+- **Startups were hit hardest**, with some companies shutting down entirely.  
+- The **technology sector experienced significant layoffs**, possibly due to economic downturns and shifts in market demand.  
+- Some companies **raised millions in funding but still faced mass layoffs**, highlighting potential financial mismanagement or unsustainable growth models.  
+
+### 📌 Key Takeaways:
+✅ Layoffs were widespread, affecting multiple industries.  
+✅ Companies with **high funding** still experienced downsizing.  
+✅ **100% layoffs** were primarily startups, indicating complete business closures.  
+
+This exploratory data analysis provides insights into **corporate downsizing patterns**, helping us understand the **impact of economic factors on employment trends**.  
+
+
+
 
 
