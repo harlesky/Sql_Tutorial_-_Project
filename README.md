@@ -1,5 +1,3 @@
-# Sql_Tutorial_-_Project
-
 # SQL Tutorial and Project on Layoffs Data
 
 ## Overview
